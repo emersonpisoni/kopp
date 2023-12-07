@@ -1,0 +1,33 @@
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tituloEquipamento,
+.tituloLocalizacao {
+  font-weight: 500;
+  font-style: italic;
+}
+
+.tituloEquipamento {
+  font-size: 14px;
+}
+
+.tituloLocalizacao {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.endereco {
+  display: flex;
+  flex-wrap: wrap;
+
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 20px;
+  }
+}

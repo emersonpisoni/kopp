@@ -1,0 +1,39 @@
+.toggles {
+  grid-area: toggles;
+}
+
+.inputSelecaoPlaca {
+  grid-area: placa;
+}
+
+.inputSelecaoCor {
+  grid-area: cor;
+}
+
+.inputSelecaoTipo {
+  grid-area: tipo;
+}
+
+.inputSelecaoCategoria {
+  grid-area: categoria;
+}
+
+.inputSelecaoAnoFabricacao {
+  grid-area: anoFabricacao;
+}
+
+.inputSelecaoEspecie {
+  grid-area: especie;
+}
+
+.inputSelecaoRestricao {
+  grid-area: restricao;
+}
+
+@media (max-width: 740px) {
+  .toggles {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+}

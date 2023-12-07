@@ -1,0 +1,58 @@
+.botaoMural {
+  border-radius: 100px;
+  border: 1px solid $detalhes;
+  background: $plano-de-fundo-2;
+  box-shadow: 0 0 6px 2px #0000000d;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 186px;
+  gap: 4px;
+}
+
+.opcao {
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  border: none;
+  background: transparent;
+  color: $primaria-clara;
+
+  &:hover {
+    background: rgba($detalhes, 0.5);
+  }
+
+  &:active {
+    background: $primaria-padrao;
+    color: $plano-de-fundo-2;
+
+    svg path {
+      fill: $plano-de-fundo-2;
+    }
+  }
+
+  &:has(.inputRadio:checked) {
+    background: $primaria-mais-clara;
+    color: $plano-de-fundo-2;
+
+    svg path {
+      fill: $plano-de-fundo-2;
+    }
+  }
+}
+
+.inputRadio {
+  display: none;
+}
+
+.label {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}

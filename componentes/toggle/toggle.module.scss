@@ -1,0 +1,68 @@
+$x-icone: '<svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.8332 5.34166L14.6582 4.16666L9.99984 8.825L5.3415 4.16666L4.1665 5.34166L8.82484 10L4.1665 14.6583L5.3415 15.8333L9.99984 11.175L14.6582 15.8333L15.8332 14.6583L11.1748 10L15.8332 5.34166Z" fill="%23adadad"/></svg>';
+$checar-icone: '<svg width="14" height="14"  viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.333 13.25-3.5-3.5-1.167 1.167 4.667 4.666 10-10-1.166-1.166-8.834 8.833Z" fill="%23f8fcff"/></svg>';
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.toggle {
+  transition: border $tempo-transicao-padrao;
+  border: 1px solid $detalhes;
+  border-radius: 100px;
+  margin-left: 10px;
+  appearance: none;
+  width: 50px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  padding: 1px;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: $tempo-transicao-padrao ease-in-out;
+  }
+
+  &:checked {
+    background-color: $plano-de-fundo-2;
+    border: 1px solid $detalhes;
+
+    &::after {
+      transform: translateX(25px);
+      background-color: $primaria-mais-clara;
+      background-image: url('data:image/svg+xml;utf8,' + $checar-icone);
+    }
+  }
+
+  &:not(:checked) {
+    background-color: $detalhes;
+
+    &::after {
+      transform: translateX(0);
+      background-color: $plano-de-fundo-2;
+      background-image: url('data:image/svg+xml;utf8,' + $x-icone);
+    }
+
+    &:hover {
+      transition: border $tempo-transicao-padrao;
+      border: 1px solid $cinza-claro;
+    }
+  }
+
+  &:checked:hover {
+    transition: border $tempo-transicao-padrao;
+    border: 1px solid $cinza-claro;
+
+    &::after {
+      background-color: $primaria-clara;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+.backgroundBlur {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(black, 0.5);
+  z-index: 4;
+
+  &.fechado {
+    transition: $tempo-transicao-padrao display;
+    display: none;
+  }
+}
+
+.formAlertaOcr {
+  width: 644px;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 50px;
+  z-index: 5;
+  background-color: $plano-de-fundo;
+  transition: $tempo-transicao-padrao;
+  padding: 50px 50px 0;
+
+  h1 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 10px;
+  }
+}
+
+.fechado {
+  transition: $tempo-transicao-padrao;
+  overflow: hidden;
+  transform: translateX(700px);
+}
+
+.botaoFechar {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  cursor: pointer;
+
+  &:hover {
+    > svg > path {
+      fill: $primaria-clara;
+    }
+  }
+}
+
+$padding: 100px;
+$header: 50px;
+$botoes: 42px;
+$exibicao: 71px;
+$altura-filtros: calc(
+  100vh - $padding - $header - $exibicao - $botoes - 10px - 50px
+);
+
+.containerFiltros {
+  @include input-scroll;
+
+  overflow-x: hidden;
+  margin-bottom: 20px;
+  height: $altura-filtros;
+}
+
+.inputRadio {
+  margin: 0 0 30px;
+
+  > div {
+    width: 50%;
+
+    > label {
+      padding: 18px 0;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.filtrosVeiculo {
+  width: 100%;
+  display: grid;
+  grid-template: 'placa cor' 'tipo categoria' 'anoFabricacao especie' 'restricao restricao' 'toggles toggles';
+  gap: 10px;
+
+  > div:last-child {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+}
+
+.containerEquipamento {
+  margin-bottom: 20px;
+}
+
+.botoes {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 740px) {
+  .formAlertaOcr {
+    @include container;
+
+    padding-top: 40px;
+    width: 100%;
+  }
+
+  .filtrosVeiculo {
+    grid-template:
+      'placa cor'
+      'tipo tipo'
+      'categoria categoria'
+      'anoFabricacao especie'
+      'restricao restricao'
+      'toggles toggles' /
+      50% 50%;
+    padding-right: 10px;
+    padding-bottom: 20px;
+  }
+
+  .botaoCancelar {
+    display: none;
+  }
+
+  .botaoFechar {
+    top: 20px;
+    right: 15px;
+  }
+
+  .containerFiltros {
+    margin-bottom: 20px;
+    height: calc($altura-filtros - 20px);
+  }
+}

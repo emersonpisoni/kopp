@@ -1,0 +1,61 @@
+.accordionEquipamento {
+  margin-bottom: 1px;
+}
+
+.accordionVeiculo {
+  > div {
+    display: grid;
+    grid-template:
+      'placa cor tipo tipo categoria categoria .'
+      'anoFabricacao especie especie restricao restricao restricao toggles' 60px
+      / 1fr 1fr 1fr 1fr 1fr 1fr 400px;
+    gap: 10px;
+
+    > div > div {
+      width: 100%;
+
+      > input {
+        width: 100%;
+        min-width: 100px;
+      }
+    }
+  }
+}
+
+.botoes {
+  display: flex;
+  margin-top: 12px;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+@media (min-width: 320px) and (max-width: 1100px) {
+  .accordionVeiculo {
+    > div {
+      width: 100%;
+      grid-template:
+        'placa cor '
+        'tipo tipo '
+        'categoria categoria '
+        'anoFabricacao especie '
+        'restricao restricao '
+        'toggles toggles ' / 50% auto;
+    }
+  }
+
+  .accordionEquipamento > div {
+    display: grid;
+  }
+
+  .botoes {
+    padding: 0 15px;
+    justify-content: center;
+  }
+}
+
+.accordionVeiculo > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}

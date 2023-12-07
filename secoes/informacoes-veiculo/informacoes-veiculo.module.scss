@@ -1,0 +1,71 @@
+.secao {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 103px 65px;
+  gap: 10px;
+  max-width: 860px;
+}
+
+.imagemContainer {
+  position: relative;
+}
+
+.informacoesGerais,
+.informacoesVeiculo {
+  display: grid;
+  grid-template-columns: 45% auto;
+  gap: 10px;
+}
+
+.botaoExpandir {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  justify-content: center;
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+
+  > svg {
+    margin: 0;
+    transform: rotate(34deg);
+  }
+}
+
+.secaoImagemExpandida {
+  grid-template-rows: 375px;
+
+  .informacoesGerais {
+    display: inherit;
+  }
+
+  .informacoesVeiculo {
+    display: grid;
+    grid-template-columns: 492px;
+  }
+
+  .botaoExpandir svg {
+    transform: rotate(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .secao {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .botaoExpandir {
+    display: none;
+  }
+
+  .informacoesGerais,
+  .informacoesVeiculo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .imagemContainer img {
+    position: relative !important;
+  }
+}

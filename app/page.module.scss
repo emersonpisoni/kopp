@@ -1,0 +1,31 @@
+.main,
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.description {
+  width: 600px;
+  flex-direction: column;
+  padding: 60px;
+
+  > button {
+    margin: 20px;
+  }
+}
+
+.inputTexto,
+.inputSelecao {
+  margin: 20px 0;
+}
+
+.cards {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+
+  button {
+    margin: 5px;
+  }
+}

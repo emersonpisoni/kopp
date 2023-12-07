@@ -1,0 +1,39 @@
+.informacoesVeiculo {
+  display: grid;
+  grid-template-columns: 255px 323px;
+  gap: 10px;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemInfoVeiculo {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.tituloVeiculo {
+  font-size: 14px;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.chave {
+  font-size: 12px;
+  margin-right: $margin-padrao;
+}
+
+.valor {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 300;
+}

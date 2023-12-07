@@ -1,0 +1,162 @@
+.setaBaixo {
+  $tamanho-xy: 22px;
+
+  width: $tamanho-xy;
+  height: $tamanho-xy;
+  position: absolute;
+  z-index: 2;
+  top: 26px;
+  left: calc(50% - ($tamanho-xy / 2));
+  right: 50%;
+
+  > path {
+    stroke: transparent;
+    fill: $plano-de-fundo-2;
+  }
+}
+
+.hora {
+  display: flex;
+}
+
+.cardAlertaOcr {
+  position: relative;
+  color: $branco;
+  overflow: hidden;
+
+  .cabecalho .hora {
+    display: flex;
+    align-items: center;
+
+    > svg {
+      margin-right: 1px;
+
+      > path {
+        fill: $branco;
+      }
+    }
+  }
+}
+
+.placa {
+  background-color: transparent;
+}
+
+.equipamento {
+  position: absolute;
+  padding: 1px 8px;
+  border-radius: 10px;
+  background-color: $secundaria-padrao;
+  color: $cinza;
+  font-size: 14px;
+  right: 8px;
+  margin-top: 8px;
+  z-index: 3;
+  font-weight: 600;
+}
+
+.pequeno,
+.medio,
+.grande,
+.extraGrande {
+  min-width: 150px;
+}
+
+.imagemVeiculo {
+  object-fit: cover;
+}
+
+:has(.cabecalho) .imagemVeiculo {
+  margin-top: 36px;
+}
+
+.cabecalho {
+  border-radius: 5px 5px 0 0;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  background-color: $cinza;
+  justify-content: space-between;
+}
+
+@media (max-width: 1100px) {
+  :has(.cabecalho) .imagemVeiculo {
+    margin-top: 19px;
+  }
+
+  .cabecalho {
+    padding: 2px 6px;
+  }
+
+  .pequeno {
+    width: 100%;
+    min-height: calc((100vh - 190px) / 2);
+  }
+
+  .medio,
+  .grande {
+    min-width: 164px;
+    min-height: 142px;
+
+    .cabecalho {
+      .placa {
+        font-size: 12px;
+      }
+
+      .hora {
+        font-size: 10px;
+
+        > svg {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+  }
+
+  .pequeno,
+  .medio,
+  .grande {
+    .setaBaixo {
+      top: 10px;
+    }
+  }
+
+  :has(.cabecalho) .extraGrande .imagemVeiculo {
+    margin-top: 33px;
+    object-fit: cover;
+  }
+
+  .extraGrande {
+    min-width: 110px;
+    min-height: 100px;
+
+    .cabecalho {
+      flex-direction: column;
+      padding: 3px 5px;
+
+      .placa {
+        font-size: 12px;
+      }
+
+      .hora {
+        font-size: 9px;
+
+        > svg {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+
+    .equipamento {
+      margin: 0;
+      font-size: 10px;
+      top: 10px;
+      right: 7px;
+      padding: 0;
+      background-color: transparent;
+      color: $branco;
+    }
+  }
+}

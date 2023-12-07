@@ -1,0 +1,78 @@
+.accordion {
+  width: 100%;
+}
+
+.botaoExpansivel {
+  width: 100%;
+  border-radius: $border-radius-padrao;
+  background-color: $primaria-padrao;
+  color: $branco;
+  padding: 6px $padding-padrao;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.icone {
+  transition: $tempo-transicao-padrao;
+  transform: rotate(0);
+
+  svg {
+    width: 14px;
+    height: 14px;
+
+    path {
+      fill: $branco;
+    }
+  }
+}
+
+.accordion:has(.expandido) .botaoExpansivel {
+  background-color: $detalhes;
+  color: $cinza;
+  transition: 1.5s ease-in-out;
+
+  .icone {
+    transition: $tempo-transicao-padrao;
+    transform: rotate(180deg);
+
+    svg path {
+      fill: $cinza;
+    }
+  }
+}
+
+.textoBotao {
+  font-weight: 500;
+}
+
+.containerTextoIcone {
+  display: flex;
+  align-items: center;
+}
+
+.textoAuxiliar {
+  margin-right: $margin-padrao;
+}
+
+.painel {
+  padding: 0;
+  transition: 0.5s ease-out;
+  max-height: 0;
+
+  &.expandido {
+    padding-top: $padding-padrao;
+    padding-bottom: 20px;
+    transition: 1.5s ease-out;
+    max-height: 1500px;
+  }
+
+  &:not(.expandido) {
+    overflow: hidden;
+  }
+}

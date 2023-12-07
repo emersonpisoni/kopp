@@ -1,0 +1,28 @@
+.cabecalho {
+  width: 100%;
+  position: fixed;
+  background: $primaria-padrao;
+  top: 0;
+  height: 50px;
+  column-gap: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 6;
+
+  .active {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &::before {
+      content: '';
+      background: $secundaria-padrao;
+      position: absolute;
+      height: 2px;
+      width: 40px;
+      bottom: -10px;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.arrastavel {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cabecalho {
+  padding: 2px $padding-padrao;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid $primaria-padrao;
+  background-color: $plano-de-fundo-2;
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: -18px;
+  cursor: move;
+
+  .botaoExpandir svg,
+  .iconeArrastar svg {
+    margin-left: $margin-padrao;
+    width: 13px;
+    height: 13px;
+
+    path {
+      fill: $primaria-padrao;
+    }
+  }
+
+  .iconeArrastar {
+    cursor: move;
+  }
+
+  .botaoExpandir {
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+.minimizado .cabecalho {
+  border-radius: 20px;
+}
+
+.titulo {
+  font-size: 8px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: $primaria-padrao;
+}
+
+.conteudo {
+  padding: $padding-padrao;
+  background-color: $plano-de-fundo-2;
+  border-radius: $border-radius-padrao;
+  border: 1px solid $detalhes;
+  box-shadow: 0 0 4px 0 rgba($cinza, 0.25);
+  color: $cinza;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.minimizado .conteudo {
+  padding: 0;
+  border: 0;
+  height: 0;
+  overflow: hidden;
+}

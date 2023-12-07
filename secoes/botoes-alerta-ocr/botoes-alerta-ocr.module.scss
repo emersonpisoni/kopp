@@ -1,0 +1,66 @@
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.botoesLadoDireito {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.inputRadio {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.botaoVoltar {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .botaoFiltros,
+  .botaoCongelar,
+  .botaoVoltar {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+
+    > span {
+      display: none;
+    }
+
+    > svg {
+      margin: 0;
+    }
+  }
+
+  .botaoFiltros {
+    order: 2;
+  }
+
+  .botaoCongelar {
+    order: 3;
+  }
+
+  .botaoVoltar {
+    display: flex;
+  }
+
+  .inputRadio {
+    display: none;
+  }
+
+  .botoesLadoDireito {
+    width: 100%;
+    position: fixed;
+    bottom: 10px;
+    justify-content: center;
+    z-index: 4;
+    left: 0;
+  }
+}

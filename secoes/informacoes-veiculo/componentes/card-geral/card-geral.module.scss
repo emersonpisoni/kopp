@@ -1,0 +1,26 @@
+.infoVeiculo {
+  margin-right: $margin-padrao;
+}
+
+.listaInformacoes {
+  list-style: none;
+  display: grid;
+  gap: 5px;
+}
+
+.containerPlacaRestricao {
+  display: flex;
+  justify-content: space-between;
+}
+
+.equipamento {
+  color: $roxo-azulado;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.restricao {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}

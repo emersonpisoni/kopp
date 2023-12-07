@@ -1,0 +1,16 @@
+.textoComIcone {
+  display: grid;
+  grid-template-columns: 24px auto;
+  gap: 4px;
+  align-items: center;
+
+  > svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.texto {
+  font-size: 14px;
+  font-weight: 500;
+}

@@ -1,0 +1,78 @@
+.inputTexto {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.rotulo {
+  color: $cinza;
+  margin-bottom: 2px;
+  font-size: 12px;
+}
+
+.input {
+  background: $plano-de-fundo-2;
+  transition: $tempo-transicao-padrao;
+  height: 42px;
+  border-radius: $border-radius-padrao;
+  outline: none;
+  border: 1px solid $detalhes;
+  padding: $padding-padrao;
+  color: $cinza;
+  padding-right: 30px;
+
+  &::placeholder {
+    color: $detalhes;
+  }
+
+  &:hover {
+    border-color: $primaria-mais-clara;
+  }
+
+  &:focus {
+    border-color: $primaria-clara;
+  }
+}
+
+.icone {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  cursor: pointer;
+
+  > svg {
+    width: 16px;
+    height: 16px;
+    transition: $tempo-transicao-padrao;
+    stroke: $detalhes;
+  }
+
+  &:hover {
+    > svg {
+      stroke: $primaria-clara;
+    }
+  }
+}
+
+.inputTexto:has(.input:focus) {
+  .selecao {
+    transition: $tempo-transicao-padrao;
+    transform: rotate(180deg);
+
+    > svg {
+      stroke: $primaria-mais-clara;
+    }
+  }
+}
+
+.inputTexto:has(.detalhe) .input {
+  padding: 0 35px;
+}
+
+.detalhe {
+  @include detalhe-input;
+
+  position: absolute;
+  top: 50%;
+  left: 10px;
+}

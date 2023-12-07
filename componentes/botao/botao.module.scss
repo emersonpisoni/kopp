@@ -1,0 +1,123 @@
+@mixin transicionando($transition) {
+  @if $transition {
+    transition:
+      background-color 500ms,
+      $transition;
+  } @else {
+    transition: background-color 500ms;
+  }
+}
+
+@mixin background-hovering(
+  $cor-plano-de-fundo: $secundaria-padrao,
+  $transicao: false
+) {
+  @include transicionando($transicao);
+
+  &:hover {
+    @include transicionando($transicao);
+
+    background-color: $cor-plano-de-fundo;
+  }
+}
+
+.botao {
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 12px 30px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.requisicao {
+  color: $branco;
+  background-color: $primaria-mais-clara;
+
+  @include background-hovering($primaria-clara, box-shadow 500ms);
+
+  &:hover {
+    box-shadow: 0 6px 10px 2px rgba($cinza, 0.25);
+  }
+
+  &:active {
+    background-color: $primaria-padrao;
+    box-shadow: none;
+    box-shadow: 0 6px 10px 1px rgba($cinza, 0.25) inset;
+  }
+}
+
+.negativo {
+  color: $branco;
+  background-color: $cinza-claro;
+
+  @include background-hovering($cinza);
+
+  &:hover {
+    color: $branco;
+  }
+
+  &:active {
+    color: $cinza;
+    background-color: $detalhes;
+  }
+}
+
+.acaoPadrao {
+  color: $primaria-clara;
+  background-color: none;
+  border: 1px solid $primaria-clara;
+
+  @include background-hovering($plano-de-fundo-2);
+
+  &:active {
+    color: $primaria-padrao;
+    background-color: $plano-de-fundo;
+    border-color: $primaria-padrao;
+  }
+}
+
+.acaoSecundario {
+  font-size: 12px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background-color: $plano-de-fundo-2;
+  color: $primaria-padrao;
+  box-shadow: 0 0 8px 0 rgba($cinza, 0.25);
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+
+    path {
+      fill: $primaria-padrao;
+    }
+  }
+
+  @include background-hovering($primaria-mais-clara);
+
+  &:hover {
+    color: $branco;
+
+    svg path {
+      fill: $branco;
+    }
+  }
+
+  &:active,
+  &.selecionado {
+    background-color: $primaria-padrao;
+    color: $branco;
+
+    &:not(.selecionado) {
+      border: 1px solid $primaria-clara;
+    }
+
+    svg path {
+      fill: $branco;
+    }
+  }
+}

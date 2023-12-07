@@ -1,0 +1,70 @@
+.suspenso {
+  transition: $tempo-transicao-padrao;
+  max-height: 186px;
+  width: 100%;
+  padding: 8px 3px;
+  margin-top: 4px;
+  border-radius: $border-radius-padrao;
+  border: 1px solid $detalhes;
+  background: $plano-de-fundo-2;
+  box-shadow: 0 4px 14px 2px rgba($primaria-clara, 0.2);
+  list-style: none;
+  animation: suspender $tempo-transicao-padrao ease-in-out;
+  overflow-x: hidden;
+  position: absolute;
+  z-index: 1;
+
+  @include input-scroll;
+}
+
+.itemLista {
+  color: $cinza;
+  height: 42px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: $padding-padrao;
+  border-radius: $border-radius-padrao;
+  transition: $tempo-transicao-padrao;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primaria-mais-clara;
+    color: $branco;
+  }
+}
+
+@keyframes suspender {
+  0% {
+    transform: translateY(-40px);
+    max-height: 0;
+  }
+
+  100% {
+    max-height: 142px;
+  }
+}
+
+.detalhe {
+  @include detalhe-input;
+}
+
+.textoDestacado {
+  font-weight: 600;
+}
+
+.botaoSelecionado {
+  color: $primaria-clara;
+  font-size: 11px;
+  font-weight: 400;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.inputSelecao {
+  display: inline-block;
+  position: relative;
+}

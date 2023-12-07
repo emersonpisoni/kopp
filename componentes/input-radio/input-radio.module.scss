@@ -1,0 +1,40 @@
+.radioSection {
+  display: flex;
+  margin: 20px 0;
+}
+
+.container {
+  &:first-child > label {
+    border-radius: 10px 0 0 10px;
+  }
+
+  &:not(:first-child) > label {
+    border-left: 0;
+  }
+
+  &:last-child > label {
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  > input[type="radio"] {
+    display: none;
+
+    &:checked + label {
+      background: $primaria-mais-clara;
+      color: white;
+    }
+
+    &:not(:checked) + label:hover {
+      background-color: white;
+    }
+  }
+
+  > label {
+    border: 1px solid $primaria-padrao;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: $primaria-padrao;
+  }
+}

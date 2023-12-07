@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.containerArrastavel {
+  max-width: 300px;
+}
+
+.tituloRestricao {
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: $margin-padrao;
+}
+
+.restricao {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

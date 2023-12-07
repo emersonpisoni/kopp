@@ -1,0 +1,5 @@
+export { default as InformacoesVeiculo } from './informacoes-veiculo/informacoes-veiculo.secao'
+export { default as MuralAlertaOcr } from './mural-alerta-ocr/mural-alerta-ocr.secao'
+export { default as BotoesAlertaOcr } from './botoes-alerta-ocr/botoes-alerta-ocr.secao'
+export { default as FormFiltrosVeiculo } from './form-filtros-veiculo/form-filtros-veiculo.secao'
+export { default as FormAlertaOcr } from './form-alerta-ocr/form-alerta-ocr.secao'

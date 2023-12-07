@@ -1,0 +1,58 @@
+.itensSelecionados {
+  border-top: 1px solid $detalhes;
+  display: flex;
+  overflow-x: scroll;
+  gap: 5px;
+  height: 30px;
+  align-items: center;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > div:last-child {
+    margin-right: 10px;
+  }
+}
+
+.botaoRolagem {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 1px;
+  background-color: $plano-de-fundo-2;
+  border: none;
+  cursor: pointer;
+
+  > svg {
+    height: 12px;
+    width: 12px;
+  }
+
+  &.direito {
+    right: -4px;
+
+    > svg {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &.esquerdo {
+    left: 0;
+
+    > svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  &:hover path {
+    fill: $primaria-clara;
+  }
+}
+
+.containerSelecionados {
+  position: sticky;
+  bottom: -10px;
+  background-color: $plano-de-fundo-2;
+}
