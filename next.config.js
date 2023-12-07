@@ -32,5 +32,5 @@ export default withPWA({
     ]
   },
   output: 'export',
-  basePath: '/cek'
+  basePath: '/kopp'
 })
